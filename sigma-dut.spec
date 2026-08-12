@@ -7,17 +7,17 @@
 # The workflows expect exactly ONE *.spec at the repo root, which is why this
 # ships with a .example suffix — it stays invisible to the build until renamed.
 #
-Name:           mypackage
-Version:        1.0
+Name:           sigma-dut
+Version:        1.11
 Release:        1%{?dist}
-Summary:        One-line summary of the package
+Summary:        rpm pakcage for sigma-dut
 
 License:        BSD-3-Clause
 URL:            https://github.com/qualcomm/sigma-dut
 # Source0's filename must match the entry in `sources`. On a cache miss the
 # build downloads this URL, so keep it pointing at a fetchable upstream tarball.
 # %{name} and %{version} are expanded, so bumping Version: is usually all you need.
-Source0:         https://github.com/qualcomm/sigma-dut/tags/sigma-dut-1.11.tar.gz
+Source0:        https://github.com/qualcomm/sigma-dut/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
