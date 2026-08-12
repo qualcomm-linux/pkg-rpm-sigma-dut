@@ -13,11 +13,11 @@ Release:        1%{?dist}
 Summary:        One-line summary of the package
 
 License:        BSD-3-Clause
-URL:            https://example.com/mypackage
+URL:            https://github.com/qualcomm/sigma-dut
 # Source0's filename must match the entry in `sources`. On a cache miss the
 # build downloads this URL, so keep it pointing at a fetchable upstream tarball.
 # %{name} and %{version} are expanded, so bumping Version: is usually all you need.
-Source0:        https://example.com/mypackage/releases/%{name}-%{version}.tar.gz
+Source0:         https://github.com/qualcomm/sigma-dut/tags/sigma-dut-1.11.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
