@@ -1,6 +1,6 @@
 Name:           sigma-dut
-Version:        1.11
-Release:        1%{?dist}
+Version:        latest
+Release:        master%{?dist}
 Summary:        WFA certification testing tool for QCA devices
 
 License:        BSD-3-Clause
@@ -8,7 +8,7 @@ URL:            https://github.com/qualcomm/sigma-dut
 # Source0's filename must match the entry in `sources`. On a cache miss the
 # build downloads this URL, so keep it pointing at a fetchable upstream tarball.
 # %{name} and %{version} are expanded, so bumping Version: is usually all you need.
-Source0:        https://github.com/qualcomm/sigma-dut/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:        https://github.com/qualcomm/sigma-dut/archive/refs/heads/master.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
