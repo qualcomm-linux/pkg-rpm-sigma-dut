@@ -1,16 +1,7 @@
-# Example RPM spec file.
-#
-# Rename this to <your-component>.spec and edit the fields below:
-#
-#   git mv mypackage.spec.example mycomponent.spec
-#
-# The workflows expect exactly ONE *.spec at the repo root, which is why this
-# ships with a .example suffix — it stays invisible to the build until renamed.
-#
 Name:           sigma-dut
 Version:        1.11
 Release:        1%{?dist}
-Summary:        rpm pakcage for sigma-dut
+Summary:        WFA certification testing tool for QCA devices
 
 License:        BSD-3-Clause
 URL:            https://github.com/qualcomm/sigma-dut
@@ -23,23 +14,26 @@ BuildRequires:  gcc
 BuildRequires:  make
 
 %description
-A longer description of the package.
+sigma-dut is the WFA Sigma DUT/CA tool used for Wi-Fi certification
+testing on Qualcomm/Atheros devices.  It implements the WFA control
+agent protocol and supports 802.11a/b/g/n/ac/ax, P2P, NAN, and
+related certification test cases.
 
 %prep
 %autosetup
 
 %build
-%configure
 %make_build
 
+
 %install
-%make_install
+%make_install BINDIR=%{_sbindir}
 
 %files
-%license LICENSE
-%doc README.md
-%{_bindir}/mypackage
+%doc README CONTRIBUTIONS
+%license README
+%{_sbindir}/sigma_dut
 
 %changelog
-* Mon Jun 29 2026 Maintainer <maintainer@example.com> - 1.0-1
-- Initial package
+* Mon Jun 29 2026 geyi <geyi@qti.qualcomm.com> - 1.11-1
+- Initial RPM packaging for sigma-dut.
