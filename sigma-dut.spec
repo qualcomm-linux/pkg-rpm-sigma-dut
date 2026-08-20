@@ -1,17 +1,15 @@
+%global commit a7859766c2bc60bcbc5d6271617141e6853fea8a
+
 Name:           sigma-dut
-Version:        latest
-Release:        master%{?dist}
+Version:        %{commit}
+Release:        1%{?dist}
 Summary:        WFA certification testing tool for QCA devices
 
-License:        BSD-3-Clause
+License:        BSD-3-Clause-Clear
 URL:            https://github.com/qualcomm/sigma-dut
-# Source0's filename must match the entry in `sources`. On a cache miss the
-# build downloads this URL, so keep it pointing at a fetchable upstream tarball.
-# %{name} and %{version} are expanded, so bumping Version: is usually all you need.
-Source0:        https://github.com/qualcomm/sigma-dut/archive/refs/heads/master.tar.gz
+Source0:        https://github.com/qualcomm/%{name}/archive/%{commit}/%{name}-%{commit}.tar.gz
 
-BuildRequires:  gcc
-BuildRequires:  make
+BuildRequires:  pkgconfig(libnl-3.0)
 
 %description
 sigma-dut is the WFA Sigma DUT/CA tool used for Wi-Fi certification
@@ -20,11 +18,10 @@ agent protocol and supports 802.11a/b/g/n/ac/ax, P2P, NAN, and
 related certification test cases.
 
 %prep
-%autosetup
+%autosetup -n %{name}-%{commit}
 
 %build
 %make_build
-
 
 %install
 %make_install BINDIR=%{_sbindir}
@@ -35,5 +32,5 @@ related certification test cases.
 %{_sbindir}/sigma_dut
 
 %changelog
-* Mon Jun 29 2026 geyi <geyi@qti.qualcomm.com> - 1.11-1
-- Initial RPM packaging for sigma-dut.
+* Wed Aug 19 2026 Yu Zhang <yu.zhang@oss.qualcomm.com> - a7859766c2bc60bcbc5d6271617141e6853fea8a-1
+- Build from fixed upstream commit a7859766c2bc60bcbc5d6271617141e6853fea8a
