@@ -11,7 +11,7 @@ This branch contains the CentOS Stream 10 RPM packaging for `sigma-dut`.
 | Field | Value |
 |---|---|
 | Package | `sigma-dut` |
-| Version | `dev` |
+| Version | `1.11^20260729ga785976` |
 | Source commit | `a7859766c2bc60bcbc5d6271617141e6853fea8a` |
 | Source | `https://github.com/qualcomm/sigma-dut/archive/a7859766c2bc60bcbc5d6271617141e6853fea8a/sigma-dut-a7859766c2bc60bcbc5d6271617141e6853fea8a.tar.gz` |
 | Source checksum | See `sources` |
@@ -22,9 +22,8 @@ The package installs:
 /usr/sbin/sigma_dut
 ```
 
-`sigma-dut` has no newer upstream release tag for this packaging target, so this
-RPM intentionally builds from the fixed commit above and packages it as a `dev`
-snapshot instead of a moving branch.
+This RPM builds from the fixed commit above and packages it as a post-release
+snapshot of upstream `v1.11`, using Fedora's snapshot versioning format.
 
 ## Files
 

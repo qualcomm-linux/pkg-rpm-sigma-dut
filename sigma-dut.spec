@@ -1,7 +1,7 @@
 %global commit a7859766c2bc60bcbc5d6271617141e6853fea8a
 
 Name:           sigma-dut
-Version:        dev
+Version:        1.11^20260729ga785976
 Release:        1%{?dist}
 Summary:        WFA certification testing tool for QCA devices
 
@@ -32,5 +32,5 @@ related certification test cases.
 %{_sbindir}/sigma_dut
 
 %changelog
-* Fri Aug 21 2026 Yu Zhang <yu.zhang@oss.qualcomm.com> - dev-1
-- Package fixed upstream commit a7859766c2bc60bcbc5d6271617141e6853fea8a as a dev snapshot
+* Tue Sep 22 2026 Yu Zhang <yu.zhang@oss.qualcomm.com> - 1.11^20260729ga785976-1
+- Package fixed upstream commit a7859766c2bc60bcbc5d6271617141e6853fea8a as a post-release snapshot
