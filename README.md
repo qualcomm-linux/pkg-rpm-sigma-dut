@@ -4,7 +4,9 @@ SPDX-License-Identifier: BSD-3-Clause
 -->
 # sigma-dut RPM - CentOS Stream 10
 
-This branch contains the CentOS Stream 10 RPM packaging for `sigma-dut`.
+The [`c10s`](https://github.com/qualcomm-linux/pkg-rpm-sigma-dut/tree/c10s) branch contains the
+CentOS Stream 10 RPM packaging for `sigma-dut`.
+Check out that branch to access the spec file and `sources`.
 
 ## Package
 
@@ -49,10 +51,14 @@ Local validation can be run with `qcom-rpm-utils`:
   --output /path/to/output
 ```
 
-For CI, open a PR against this `c10s` branch. The `build-on-pr` workflow builds
+For CI, open a PR against the `c10s` branch. The `build-on-pr` workflow builds
 RPM artifacts but does not publish them.
 
 ## Release
 
 After the PR is merged, run **Actions -> Release** on the `c10s` branch. The
 release workflow publishes the generated RPMs to Artifactory after approval.
+
+## License
+
+pkg-rpm-sigma-dut is licensed under the [BSD-3-Clause License](https://spdx.org/licenses/BSD-3-Clause.html). See [LICENSE.txt](LICENSE.txt) for the full license text.
